@@ -105,14 +105,23 @@ function uploadImage(gameName) {
         const newFileName = gameName.replace('.swf', ext);
         const newFilePath = path.join(imgDir, newFileName);
 
+        const existingPng = path.join(imgDir, gameName.replace('.swf', '.png'));
+        const existingJpg = path.join(imgDir, gameName.replace('.swf', '.jpg'));
+
+        [existingPng, existingJpg].forEach(existingPath => {
+            if(fs.existsSync(existingPath)) {
+                fs.unlinkSync(existingPath);
+            }
+        });
+
         const reader = new FileReader();
         reader.onload = () => {
             const buffer = Buffer.from(reader.result);
             fs.writeFile(newFilePath, buffer, err => {
                 if(err) {
-                    console.error('Erro ao salvar a capa do jogo:', err);
+                    console.error('Erro ao salvar a nova capa do jogo:', err);
                 } else {
-                    console.log('Capa salva com sucesso:', newFileName);
+                    console.log('Nova capa salva com sucesso:', newFileName);
                     listGames();
                 }
             });
@@ -171,3 +180,11 @@ document.getElementById('add-game-btn').addEventListener('click', () => {
 });
 
 listGames();
+
+const { ipcRenderer } = require('electron');
+
+document.getElementById('minimize-btn').addEventListener('click', () => {ipcRenderer.send('minimize');});
+
+document.getElementById('maximize-btn').addEventListener('click', () => {ipcRenderer.send('maximize');});
+
+document.getElementById('close-btn').addEventListener('click', () => {ipcRenderer.send('close');});
