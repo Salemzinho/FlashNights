@@ -1,0 +1,15 @@
+{
+  "name": "flashnights",
+  "version": "1.0.0",
+  "description": "Steam-like flash games library using Electron",
+  "main": "main.js",
+"scripts": {
+  "start": "electron .",
+  "dist": "electron-builder"
+},
+  "devDependencies": {
+    "electron": "^25.0.0",
+    "electron-builder": "^25.1.8",
+    "electron-packager": "^17.1.2"
+  }
+}
