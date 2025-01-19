@@ -73,20 +73,18 @@ function listGames() {
 }
 
 function playGame(gameName) {
-    ipcRenderer.send('minimize');
-
     const flashPlayerPath = path.resolve(__dirname, 'flashplayer.exe');
     const gamePath = path.resolve(__dirname, 'games', gameName);
-    const windowsGamePath = gamePath.replace(/^\/mnt\/c\//, 'C:\\').replace(/\//g, '\\');
 
-    const command = `"${flashPlayerPath}" "${windowsGamePath}"`;
-
+    const command = `"${flashPlayerPath}" "${gamePath}"`;
+    ipcRenderer.send('minimize');
     exec(command, (error, stdout, stderr) => {
         if (error) {
             console.error('Erro ao abrir o jogo:', error);
             alert('Erro ao abrir o jogo. Verifique o Flash Player e o arquivo .swf.');
         } else {
             console.log('Jogo iniciado com sucesso!');
+
         }
     });
 }

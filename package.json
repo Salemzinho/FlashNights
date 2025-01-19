@@ -3,13 +3,38 @@
   "version": "1.0.0",
   "description": "Steam-like flash games library using Electron",
   "main": "main.js",
-"scripts": {
-  "start": "electron .",
-  "dist": "electron-builder"
-},
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.flashnights.app",
+    "productName": "FlashNights",
+    "win": {
+      "target": "nsis",
+      "icon": "assets/img/fn.ico",
+      "asar": false
+    },
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "**/*",
+      "!dist/**",
+      "!node_modules/**/{test,tests}/**",
+      "!node_modules/**/*.md",
+      "!node_modules/**/*.ts",
+      "!node_modules/.bin",
+      "!*.map",
+      "!*.lock",
+      "!.gitignore",
+      "!.vscode/**"
+    ]
+  },
   "devDependencies": {
     "electron": "^25.0.0",
     "electron-builder": "^25.1.8",
-    "electron-packager": "^17.1.2"
+    "electron-packager": "^17.1.2",
+    "nsis": "^0.0.0"
   }
 }
