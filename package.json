@@ -12,7 +12,7 @@
     "productName": "FlashNights",
     "win": {
       "target": "nsis",
-      "icon": "assets/img/fn.ico",
+      "icon": "fn.ico",
       "asar": false
     },
     "directories": {

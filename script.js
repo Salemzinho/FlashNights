@@ -35,15 +35,15 @@ function listGames() {
 
             const cardHTML = `
                 <div class="col-md-3 col-sm-4 col-6 game-card">
-                    <div class="card shadow-sm border-0 m-1">
+                    <div class="card shadow-sm border-0 m-1 br-10">
                         <div class="game-image-container">
                             <img src="${coverPath ? 'img/' + path.basename(coverPath) : 'assets/img/sem-jogo.png'}" 
-                                class="card-img-top game-image rounded" alt="${gameBaseName} cover" data-game="${game}">
+                                class="card-img-top game-image br-10" alt="${gameBaseName} cover" data-game="${game}">
                             <div class="game-name-container">
                                 ${gameBaseName}
                             </div>
                         </div>
-                        <div class="position-absolute bottom-0 left-0 m-3 bg-dark text-white px-2 py-1 rounded change-cover" data-game="${game}">
+                        <div class="position-absolute bottom-0 left-0 m-3 bg-dark text-white px-2 py-1 br-10 change-cover" data-game="${game}">
                             <img src="assets/img/engrenagem.png" alt="Engrenagem" style="width: 20px; height: 20px;">
                         </div>
                     </div>

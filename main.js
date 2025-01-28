@@ -8,6 +8,7 @@ app.on('ready', () => {
         width: 1366,
         height: 768,
         frame: false,
+        icon: path.join(__dirname, 'assets/img/fn.ico'),
         backgroundColor: '#1f1f1f',
         webPreferences: {
             nodeIntegration: true,

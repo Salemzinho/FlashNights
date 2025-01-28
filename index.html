@@ -11,29 +11,93 @@
 </style>
 </head>
 <body>
-<div class="d-flex justify-content-between p-1 text-white drag-bar">
-<div class="align-middle">
-<img src="assets/img/logo.png" width="100" height="30" alt="NightLights"><small>(beta)</small>
-</div>
+<div class="d-flex justify-content-between p-1 text-white drag-bar fixed-top bg-black">
+<div class="align-middle"></div>
 <div>
 <button id="minimize-btn" class="btn btn-dark btn-sm"><img src="assets/img/minimize.png" width="14" height="14" alt="_"></button>
 <button id="maximize-btn" class="btn btn-dark btn-sm"><img src="assets/img/maximize.png" width="14" height="14" alt="[ ]"></button>
 <button id="close-btn" class="btn btn-dark btn-sm"><img src="assets/img/close.png" width="14" height="14" alt="X"></button>
 </div>
 </div>
-<div class="container mt-5">
-<div class="row mt-3">
-<div class="col-8">
-<h5 class="text-white">Olá, bem-vindo ao <strong>FlashNights</strong>!</h5>
-<p class="text-white mb-3">Sua biblioteca de jogos em flash.</p>
+<div class="container-fluid mt-4">
+<div class="row">
+<div class="col-12 col-lg-3 col-md-2 bg-black text-white vh-100 position-fixed d-flex flex-column p-3 mt-3 d-none d-md-flex">
+<img src="assets/img/logo.png" width="150" alt="NightLights">
+<ul class="nav nav-pills flex-column mb-auto mt-5">
+<li class="nav-item">
+<a href="#" class="nav-link text-white active bg-secondary">Biblioteca</a>
+</li>
+<li class="nav-item mt-3">
+<a href="#" class="nav-link text-white">Em breve</a>
+</li>
+</ul>
 </div>
-<div class="col text-right">
+<div class="d-md-none w-100 bg-black text-white p-3">
+<img src="assets/img/logo.png" width="150" alt="NightLights">
+<ul class="nav nav-pills flex-column mb-auto mt-3">
+<li class="nav-item">
+<a href="#" class="nav-link text-white active bg-secondary">Biblioteca</a>
+</li>
+<li class="nav-item mt-3">
+<a href="#" class="nav-link text-white">Em breve</a>
+</li>
+</ul>
+</div>
+<div class="col-12 col-md-9 offset-md-3">
+<div class="col text-right mt-5">
 <button id="add-game-btn" class="gradient-button">Adicionar jogos</button>
 </div>
+<div class="col-12 mt-4">
+<div id="carouselExample" class="carousel slide" data-ride="carousel">
+<div class="carousel-inner br-10">
+<div class="carousel-item active">
+<a href="https://www.kongregate.com/" target="_blank">
+<img src="assets/img/kongregate.png" class="d-block w-100" alt="Kongregate" style="height: 300px; object-fit: cover;">
+<div class="carousel-caption d-none d-md-block text-left bg-black-opacity p-2 br-10">
+<strong>Kongregate</strong><br>
+<small>Jogue e baixe jogos Flash antigos em Kongregate, uma plataforma popular de jogos.</small>
 </div>
-<div id="games-list" class="row d-flex no-gutters mt-4"></div>
+</a>
+</div>
+<div class="carousel-item">
+<a href="https://www.newgrounds.com/" target="_blank">
+<img src="assets/img/newgrounds.jpg" class="d-block w-100" alt="Newgrounds" style="height: 300px; object-fit: cover;">
+<div class="carousel-caption d-none d-md-block text-left bg-black-opacity p-2 br-10">
+<strong>Newgrounds</strong><br>
+<small>Explore uma grande seleção de jogos Flash, animações e outros conteúdos criados por desenvolvedores independentes.</small>
+</div>
+</a>
+</div>
+<div class="carousel-item">
+<a href="https://archive.org/details/softwarelibrary_flash_games" target="_blank">
+<img src="assets/img/internet-archive.png" class="d-block w-100" alt="Internet Archive" style="height: 300px; object-fit: cover;">
+<div class="carousel-caption d-none d-md-block text-left bg-black-opacity p-2 br-10">
+<strong>Internet Archive</strong><br>
+<small>O Internet Archive preserva jogos Flash antigos para fins históricos, disponíveis para você jogar e baixar.</small>
+</div>
+</a>
+</div>
+</div>
+<a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
+<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+<span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
+<span class="carousel-control-next-icon" aria-hidden="true"></span>
+<span class="sr-only">Next</span>
+</a>
+</div>
+</div>
+<div class="col mt-5">
+<h5>Sua biblioteca</h5>
+</div>
+<div id="games-list" class="row d-flex no-gutters mt-4 col"></div>
 <p class="text-white mt-3"></p>
 </div>
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
